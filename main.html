@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div class="title">Prototype.js</div>
+        <div class="line"></div>
+
+        <div class="content">
+            Prototype.js ile prototiplerinizi daha rahat yazın. <br>
+            başlatmak için terminalden prototype.js dosyasına girin ve şunu yapın;
+
+            <div class="code">
+                > npm start
+            </div>
+
+            prototypes klasör mimarisi şu şekildedir
+
+            <ul>
+                <li>
+                    <strong>public</strong>
+                    <ul>
+                        <li>first.html</li>
+                        <li>last.html</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>styles</strong>
+                    <ul>
+                        <li>index.css</li>
+                    </ul>
+                </li>
+            </ul>
+            css dosyalarınızı style içine html dosyalarınızıda public in içine koyunuz. <br>
+            bir prototipe girmek isterseniz <strong>localhost:800/prototipname</strong> şeklinde yazın
+
+            <div class="warning">
+                <i class="material-icons">warning</i> <br>
+                Eğer <strong>public</strong> klasörüne bir protitp eklerseniz (html dosyası) <br>
+                ozaman terminali <strong>ctrl + c</strong> ile durdurup tekrar başlatmalısınız.
+            </div>
+            <div class="warning">
+                <i class="material-icons">warning</i> <br>
+                gereksinimler için kullanmadan önce terminalde
+
+                <div class="code">
+                    > npm install
+                </div> yapmayı unutmayın
+            </div>
+        </div>
+    </body>
+    <style>
+        body {
+            margin-bottom: 5rem;
+        }
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .title {
+            text-align: center;
+            font-size: 60px;
+            font-weight: 100;
+        }
+        .line {
+            border-top: 1px solid rgb(219, 219, 219);
+            width: 80%;
+            margin: 2rem auto 2rem auto;
+        }
+        .content {
+            padding-left: 3rem;
+        }
+        .warning,
+        .code {
+            font-family: monospace;
+            border-radius: 7px;
+            padding: 1rem 0 1rem 1rem;
+            font-size: 16px;
+            margin: 1rem 0 1rem 0;
+            box-shadow: 0 0 20px rgb(209, 209, 209);
+        }
+        .code {
+            background-color: rgb(241, 241, 241);
+            color: rgb(99, 99, 99);
+            width: 300px;
+
+        }
+        .warning {
+            border-left: 5px solid rgb(255, 211, 131);
+            background: rgb(255, 241, 214);
+            border-radius: 4px;
+            width: 400px;
+        }
+    </style>
+</html>
