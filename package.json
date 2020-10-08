@@ -1,4 +1,6 @@
 {
+    "name": "prototype",
+    "version": "0.1.0",
     "scripts": {
         "start": "nodemon server.js"
     },
