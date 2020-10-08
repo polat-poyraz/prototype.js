@@ -74,7 +74,7 @@ Yazdığımız componenti kullanabilmek için veriğimiz id ismini kullanıyoruz
 <script src='../lib/prototypeComponent.js'></script>
 <script src='../components/first.js'></script>
 ```
-=======
+
 Kullanmadan önce 
 ```
 > npm install
@@ -82,4 +82,3 @@ Kullanmadan önce
 Yapmayi unutmayin
 
 Kullanımı ve dosya yapısı başlatdığınız'da karşınıza çıkmaktadır.
->>>>>>> f33c7fc2c01a728f9bc12f87122f2f191ada3186
