@@ -7,7 +7,7 @@
         <div class="line"></div>
 
         <div class="content">
-            Prototype.js ile prototiplerinizi daha rahat yazın. <br>
+            <h1>Başlangıç</h1>
             başlatmak için terminalden prototype.js dosyasına girin ve şunu yapın;
 
             <div class="code">
@@ -43,22 +43,101 @@
                     </ul>
                 </li>
             </ul>
-            css dosyalarınızı style içine html dosyalarınızıda public in içine koyunuz. <br>
-            bir prototipe girmek isterseniz <strong>localhost:800/prototipname</strong> şeklinde yazın
+            bir prototipe girmek isterseniz <strong>localhost:8000/prototypename</strong> şeklinde yazın
 
             <div class="warning">
                 <i class="material-icons">warning</i> <br>
-                Eğer <strong>public</strong> klasörüne bir protitp eklerseniz (html dosyası) <br>
-                terminali <strong>ctrl + c</strong> ile durdurup tekrar başlatmalısınız.
+                Eğer <strong>public</strong> klasörüne bir prototype eklerseniz (html dosyası) <br>
+                terminali <strong>ctrl + c</strong> ile durdurup, <strong>npm start</strong>
+                ile tekrar başlatmalısınız.
             </div>
+
+            <h1>Component</h1>
+            prototype.js size statik componentler yapmanızı sağlar.
+            Statik componentler javascript açısından kullanışlı değildir
+            yanlızca dinamik html ve css componentleri yazılmalıdır.
+            <br><br>
+            Component kullanmak istediğiniz dosyaya
+
+            <div class="code" style="width: 600px;">
+                <htmlCode>
+                    <<span>script src='../lib/prototypeComponent.js'></span><span><</span><span>/script></span>
+                    <br>
+                    <<span>script src='../components/kullanılacak-bileşen.js'></span><span><</span><span>/script></span>
+                </htmlCode>
+            </div>
+            <br>
+            kullanmak istediğimiz dosyaya <strong>prototypeComponent.js</strong> i ekledik. <br>
+            artık bir component yazıp bunu kullanabiliriz. <br>
+            Component yazmak için <strong>prototypeComponent.js</strong> den gelen <strong>componentUse()</strong>
+            fonksiyonunu kullancağız. <br>
+            <strong>componentUse()</strong> fonksiyonu içerisine bir callback function ve bir id adresi alır. içerisindeki callback fonksiyon bir html string i return eder. örneğin; <br>
+
+            <div class="code" style="width: 100%;">
+                <function>componentUse</function>(() <operator>=></operator> { <br>
+                    <x class="ml1"></x> <type>const</type> title <operator>=</operator> 'First Component' <br>
+
+                    <commit>
+                        <x class="ml1"></x>// Her componentsUse kullanımında bir callback fonksiyon html kodlarını return etmelidir. <br>
+                        <x class="ml1"></x>// html kodları return edilirken `` tırnak kullanılmalıdır. <br>
+                    </commit>
+                    <br>
+                    <x class="ml1"></x><operator> return </operator> (` <br>
+                    <htmlCode>
+                        <x class="ml2"></x><<span>h1 class="first-component">
+                        </htmlCode>
+                        <operator>${ </operator>title <operator>}</operator>
+                        <htmlCode>
+                        <<span>/h1> <br>
+                            <x class="ml2"></x><<span>style><span> <br>
+                                <x class="ml3"></x>.first-component{ <br>
+                                <x class="ml4"></x>background: black; <br>
+                                <x class="ml4"></x>color: white; <br>
+                                <x class="ml4"></x>text-align: center; <br>
+                                <x class="ml4"></x>padding: 1em; <br>
+                                <x class="ml4"></x>margin-bottom: 2em; <br>
+                                <x class="ml3"></x>} <br>
+                                <x class="ml2"></x><<span>/style><span> <br>
+                    </htmlCode>
+                    <x class="ml1"></x>`) <br>
+                }, '#first-component' <commit>/* Componenti hangi isim ile kullanılacağı yazılır.
+                eğer id ise # class ise . olarak türü belirtilmelidir*/</commit>)
+            </div>
+            <br>
+            şimdi basit bir component yazdık bu component içerisinde html ve css kodları bulunduruyor ve bir id alıyor.
+            Bu component i kullanabilmek için component i bağladığınız html dosyasına <strong>componentUse()</strong>
+            fonksiyonuna verdiğiniz id ile bir etiket açmanız yeterlidir. örneğin;
+            <br>
+
+            <div class="code">
+                <htmlCode>
+                    <<span>div id="first-component"><</span>/div>
+                </htmlCode>
+            </div>
+
+            Componentimizi yazdık ve kullandık. prototype.js in özellikleri bu kadardır. <br>
+            Hızlı, rahat ve düzenli prototype yazmanızı sağlar. <br>
+            Geliştirmeye açıktır. <br>
+            <br>
+            <a href="/first">
+                <button class="goPrototype">
+                    İlk prototype a göz atın
+                </button>
+            </a>
         </div>
     </body>
     <style>
         body {
             margin-bottom: 5rem;
+            background: rgb(46, 46, 46);
+            color: white;
         }
         * {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        commit {
+            color: rgb(196, 196, 196);
+            font-weight: normal;
         }
         .title {
             text-align: center;
@@ -72,27 +151,64 @@
         }
         .content {
             padding-left: 3rem;
+            width: 90%;
         }
         .warning,
         .code {
             font-family: monospace;
             border-radius: 7px;
-            padding: 1rem 0 1rem 1rem;
+            padding: 0.7rem 0 0.7rem 0.7rem;
             font-size: 16px;
             margin: 1rem 0 1rem 0;
-            box-shadow: 0 0 20px rgb(209, 209, 209);
+            color: black;
         }
         .code {
-            background-color: rgb(241, 241, 241);
-            color: rgb(99, 99, 99);
+            background-color: rgb(87, 87, 87);
+            color: white;
+            font-weight: 600;
             width: 300px;
 
         }
         .warning {
-            border-left: 5px solid rgb(255, 211, 131);
+            border-left: 5px solid rgb(255, 203, 105);
             background: rgb(255, 241, 214);
             border-radius: 4px;
             width: 400px;
+            padding-right: 1em;
         }
+        .title,
+        strong {
+            color: rgb(140, 0, 255);
+        }
+        .goPrototype {
+            padding: 1em;
+            border-radius: 5px;
+            width: 421px;
+            border: none;
+            background:  rgb(140, 0, 255);
+            font-weight: 600;
+            font-size: 17px;
+            cursor: pointer;
+            outline: none;
+            color: white;
+        }.goPrototype:hover {
+            background: rgb(121, 0, 219);
+        }
+        function {
+            color: rgb(255, 216, 145);
+        }
+        type {
+            color: rgb(60, 183, 231);
+        }
+        operator {
+            color: rgb(255, 81, 81);
+        }
+        htmlCode {
+            color:rgb(142, 142, 255)
+        }
+        .ml1 { margin-left: 1em; }
+        .ml2 { margin-left: 2em; }
+        .ml3 { margin-left: 3em; }
+        .ml4 { margin-left: 4em; }
     </style>
 </html>
